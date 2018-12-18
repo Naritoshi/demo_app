@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <title>Hello Django</title>
-</head>
-<body>
-    <h1>Hello Django</h1>
-</body>
-</html>
+{% extends 'demo_app/base.html' %}
+{% block content %}
+
+    <div class="col m6 s12 z-depth-4 #01579b light-blue darken-4">
+       <h4 style="color:white; padding: 10px;">メニュー</h1>
+    </div>
+<div class="row">
+    <span class="col s12 z-depth-4" style="font-size:30px; padding: 10px;"><a href="/input_form">情報入力画面</a></span>
+</div>
+{% endblock %}

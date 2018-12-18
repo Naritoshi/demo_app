@@ -50,14 +50,14 @@ class Customers(models.Model):
     result = models.IntegerField(blank=True, null=True)
     proba = models.FloatField(default=0.0)
     comment = models.CharField(max_length=200, blank=True, null=True)
-    registerd_date = models.DateField(default=date.today)
+    registered_date = models.DateField(default=date.today)
 
     def register(self):
-        self.registerd_date = date.today()
+        self.registered_date = date.today()
         self.save()
 
     def __str__(self):
         if self.proba == 0.0:
-            return '%s, %d, %s' % (self.registerd_date.strftime('%Y-%m-%d'), self.id, self.last_name + self.first_name)
+            return '%s, %d, %s' % (self.registered_date.strftime('%Y-%m-%d'), self.id, self.last_name + self.first_name)
         else:
-            return '%s, %d, %s, %d, %s, %s' % (self.registerd_date.strftime('%Y-%m-%d'), self.id, self.last_name + self.first_name, self.result, '{}%'.format(round(self.proba * 100, 2)), self.comment)
+            return '%s, %d, %s, %d, %s, %s' % (self.registered_date.strftime('%Y-%m-%d'), self.id, self.last_name + self.first_name, self.result, '{}%'.format(round(self.proba * 100, 2)), self.comment)
