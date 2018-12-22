@@ -10,8 +10,8 @@ import numpy as np
 import pandas as pd
 import json
 
-loaded_model = joblib.load('/home/Naritoshi/naritoshi.pythonanywhere.com/demo_app/demo_model.pkl')
-#loaded_model = joblib.load('demo_app/demo_model.pkl')
+#loaded_model = joblib.load('/home/Naritoshi/naritoshi.pythonanywhere.com/demo_app/demo_model.pkl')
+loaded_model = joblib.load('demo_app/demo_model.pkl')
 
 print("[Trained Model] loaded.")
 
