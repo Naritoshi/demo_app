@@ -5,7 +5,7 @@ from .models import Customers
 from sklearn.externals import joblib
 import numpy as np
 
-loaded_model = joblib.load('demo_app/demo_model.pkl')
+loaded_model = joblib.load('/home/Naritoshi/naritoshi.pythonanywhere.com/demo_app/demo_model.pkl')
 print("[Trained Model] loaded.")
 
 # Create your views here.
