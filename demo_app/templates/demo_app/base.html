@@ -2,8 +2,12 @@
 <html lang="ja" dir="ltr">
   <head>
     <!-- materialize CSSのCDN経由での読み込み -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <meta charset="utf-8">
     <title>{% block title %}Demo App_ローン審査{% endblock %}</title>
   </head>
@@ -15,6 +19,14 @@
         <ul id="nav-mobile" class="right col s3 hide-on-med-and-down">
           <li><a href="/input_form" style="font-size:20px">情報入力画面</a></li>
           <li><a href="/history" style="font-size:20px">顧客一覧</a></li>
+          <li><a href="/history" style="font-size:20px">顧客デモグラフィック</a></li>
+          {% if user.is_authenticated %}
+          <li>
+              <a href="{% url 'logout' %}" style="color:white; text-decoration: underline;">
+              こんにちは、{{ user.username}}
+              </a>
+          </li>
+          {% endif %}
         </ul>
       </div>
     </nav>
@@ -24,5 +36,7 @@
       {% endblock %}
 
     </div>
+    {% block script %}
+    {% endblock %}
   </body>
 </html>

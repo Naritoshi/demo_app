@@ -5,7 +5,16 @@
        <h4 style="color:white; padding: 10px;">メニュー</h1>
     </div>
 <div class="row">
-    <span class="col s12 z-depth-4" style="font-size:30px; padding: 10px;"><a href="/input_form">情報入力画面</a></span>
-    <span class="col s12 z-depth-4" style="font-size:30px; padding: 10px;"><a href="/history">顧客一覧</a></span>
+    <div class="col s12 z-depth-4 divlink" style="font-size:30px; padding: 10px; cursor: pointer;" data-url="/input_form">情報入力画面</div>
+    <div class="col s12 z-depth-4 divlink" style="font-size:30px; padding: 10px; cursor: pointer;" data-url="/history">顧客一覧</div>
+    <div class="col s12 z-depth-4 divlink" style="font-size:30px; padding: 10px; cursor: pointer;" data-url="/info">顧客デモグラフィック</div>
 </div>
 {% endblock %}
+
+{% block script %}
+<script>
+    jQuery('.divlink').click(function() {
+        location.href = jQuery(this).attr('data-url');
+    });
+</script>
+{% endblock script %}
