@@ -1,0 +1,29 @@
+{% extends 'demo_app/base.html' %}
+{% block content %}
+<h4 style="padding: 10px;">計算機</h4>
+<div class="row">
+    <div class="input-field col s3">
+        <input placeholder="number" id="num1" type="number" class="validate">
+    </div>
+    <div class="input-field col s3">
+        <input placeholder="number" id="num2" type="number" class="validate">
+    </div>
+</div>
+<div class="row">
+    <div class="col s12">
+        <button class="btn waves-effect waves-light" type="submit" name="action" onclick="calc()">計算の実行</button>
+    </div>
+    <div class="col s12" style="font-size: 200%">
+        <p id="result"></p>
+    </div>
+</div>
+<script>
+    function calc(){
+        var strNum1 = document.getElementById('num1').value;
+        var strNum2 = document.getElementById('num2').value;
+        var result = document.getElementById('result');
+        var calcResult = parseInt(strNum1) + parseInt(strNum2)
+        result.innerText = "計算結果：" + calcResult;
+    }
+</script>
+{% endblock %}
